@@ -26,6 +26,7 @@
     return self;
 }
 
+//returns town's location
 -(CGPoint) location
 {
     return image.position;
