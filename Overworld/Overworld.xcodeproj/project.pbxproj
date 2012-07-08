@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2324635315A6098B00F2849E /* gps_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 2324635215A6098B00F2849E /* gps_location.png */; };
+		2381073315A9432D00DACCAF /* Town.m in Sources */ = {isa = PBXBuildFile; fileRef = 2381073215A9432D00DACCAF /* Town.m */; };
+		2381073815A94A1600DACCAF /* town.png in Resources */ = {isa = PBXBuildFile; fileRef = 2381073715A94A1600DACCAF /* town.png */; };
 		239BABC415A542B500D84B13 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239BABC315A542B500D84B13 /* QuartzCore.framework */; };
 		239BABC615A542B500D84B13 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239BABC515A542B500D84B13 /* OpenGLES.framework */; };
 		239BABC815A542B500D84B13 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 239BABC715A542B500D84B13 /* OpenAL.framework */; };
@@ -128,6 +130,9 @@
 
 /* Begin PBXFileReference section */
 		2324635215A6098B00F2849E /* gps_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gps_location.png; path = Resources/Images/gps_location.png; sourceTree = "<group>"; };
+		2381073115A9432D00DACCAF /* Town.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Town.h; sourceTree = "<group>"; };
+		2381073215A9432D00DACCAF /* Town.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Town.m; sourceTree = "<group>"; };
+		2381073715A94A1600DACCAF /* town.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = town.png; path = Resources/Images/town.png; sourceTree = "<group>"; };
 		239BABBF15A542B500D84B13 /* Overworld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Overworld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239BABC315A542B500D84B13 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		239BABC515A542B500D84B13 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -426,6 +431,8 @@
 				239BAD2915A542B800D84B13 /* RootViewController.m */,
 				239BAD2B15A542B800D84B13 /* HelloWorldLayer.h */,
 				239BAD2C15A542B800D84B13 /* HelloWorldLayer.m */,
+				2381073115A9432D00DACCAF /* Town.h */,
+				2381073215A9432D00DACCAF /* Town.m */,
 				239BAD2E15A542B800D84B13 /* GameConfig.h */,
 				239BABD415A542B500D84B13 /* Resources */,
 				239BABE815A542B500D84B13 /* libs */,
@@ -766,6 +773,7 @@
 		239BAD3415A544C700D84B13 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2381073715A94A1600DACCAF /* town.png */,
 				2324635215A6098B00F2849E /* gps_location.png */,
 				239BAD3715A549AC00D84B13 /* map.png */,
 			);
@@ -833,6 +841,7 @@
 				239BABE715A542B500D84B13 /* iTunesArtwork in Resources */,
 				239BAD3815A549AC00D84B13 /* map.png in Resources */,
 				2324635315A6098B00F2849E /* gps_location.png in Resources */,
+				2381073815A94A1600DACCAF /* town.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,6 +950,7 @@
 				239BAD2715A542B800D84B13 /* AppDelegate.m in Sources */,
 				239BAD2A15A542B800D84B13 /* RootViewController.m in Sources */,
 				239BAD2D15A542B800D84B13 /* HelloWorldLayer.m in Sources */,
+				2381073315A9432D00DACCAF /* Town.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

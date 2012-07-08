@@ -9,6 +9,7 @@
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "Town.h"
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -35,6 +36,9 @@
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super initWithColor:ccc4(23,59,92,255)])) {
+        
+        Town *town = [[Town alloc ] initWithLocation:CGPointMake(100, 100) inLayer:self];
+        town.tag = 1;
         
         bg1 = [CCSprite spriteWithFile:@"map.png"];
         bg2 = [CCSprite spriteWithFile:@"map.png"];
@@ -76,6 +80,7 @@
         
         if(isCameraResetting)
             [self resetCamera:dt];
+        
     }
     
 }
@@ -116,7 +121,7 @@
     
     switch (touch.tapCount) {
         case 1:
-            destination = init_touch;
+            [self checkTapActions];
             break;
         case 2:
             isCameraResetting = TRUE;
@@ -143,6 +148,11 @@
     char_location.position = ccp(char_location.position.x + (adjusted_map_position.x * MAP_DRAG), char_location.position.y - (adjusted_map_position.y  * MAP_DRAG));
     
     init_touch = new_touch;
+}
+
+-(void) checkTapActions
+{
+    
 }
 
 // on "dealloc" you need to release all your retained objects
