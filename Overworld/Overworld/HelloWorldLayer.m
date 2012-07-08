@@ -184,6 +184,9 @@
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
+    
+    townsArray = nil;
+    [townsArray release];
 	
 	// don't forget to call "super dealloc"
 	[super dealloc];

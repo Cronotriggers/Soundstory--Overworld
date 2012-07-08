@@ -21,7 +21,7 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayerColor
 {
-    CGPoint init_touch, destination, speed;
+    CGPoint init_touch;
     CCSprite *bg1, *bg2, *bg3, *bg4;
     CCSprite *char_location;
     BOOL isCharMoving, isPaused, isCameraResetting;
