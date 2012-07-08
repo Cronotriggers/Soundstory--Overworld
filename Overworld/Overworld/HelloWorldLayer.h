@@ -9,6 +9,7 @@
 
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
+#import "JournalLayer.h"
 
 #define CENTER_POINT_X 240
 #define CENTER_POINT_Y 160
@@ -24,8 +25,9 @@
     CGPoint init_touch;
     CCSprite *bg1, *bg2, *bg3, *bg4;
     CCSprite *char_location;
-    BOOL isCharMoving, isPaused, isCameraResetting;
+    BOOL isCharMoving, isPaused, isCameraResetting, isJournalLayerDisplayed;
     NSMutableArray *townsArray;
+    JournalLayer *journalLayer;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

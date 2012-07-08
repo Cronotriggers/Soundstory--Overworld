@@ -62,6 +62,9 @@
         isCharMoving = FALSE;
         isPaused = FALSE;
         isCameraResetting = FALSE;
+        isJournalLayerDisplayed = FALSE;
+        
+        journalLayer = [JournalLayer node];
         
         [self createTowns];
         [self scheduleUpdate];
@@ -175,7 +178,14 @@
 
 -(void) checkTapActions
 {
-    
+    if (isJournalLayerDisplayed == FALSE) {
+        //[self addChild:[JournalLayer node]];
+        isJournalLayerDisplayed = TRUE;
+    }
+    else {
+        //[self removeChild:journalLayer cleanup:NO];
+        isJournalLayerDisplayed = FALSE;
+    }
 }
 
 // on "dealloc" you need to release all your retained objects
