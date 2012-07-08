@@ -16,6 +16,7 @@
 #define PLAYER_SPEED 15
 #define CAMERA_RESET_MIN 1
 #define  CAMERA_SPEED 2
+#define TOTAL_NUM_TOWNS 100
 
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayerColor
@@ -24,10 +25,12 @@
     CCSprite *bg1, *bg2, *bg3, *bg4;
     CCSprite *char_location;
     BOOL isCharMoving, isPaused, isCameraResetting;
+    NSMutableArray *townsArray;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
+-(void) createTowns;
 -(void) update:(ccTime) dt;
 -(void) moveCharToDestination:(ccTime) dt;
 -(void) resetCamera:(ccTime) dt;

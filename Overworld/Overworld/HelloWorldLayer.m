@@ -37,9 +37,6 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super initWithColor:ccc4(23,59,92,255)])) {
         
-        Town *town = [[Town alloc ] initWithLocation:CGPointMake(100, 100) inLayer:self];
-        town.tag = 1;
-        
         bg1 = [CCSprite spriteWithFile:@"map.png"];
         bg2 = [CCSprite spriteWithFile:@"map.png"];
         bg3 = [CCSprite spriteWithFile:@"map.png"];
@@ -66,9 +63,25 @@
         isPaused = FALSE;
         isCameraResetting = FALSE;
         
+        [self createTowns];
         [self scheduleUpdate];
 	}
 	return self;
+}
+
+-(void) createTowns
+{
+    townsArray = [[NSMutableArray alloc] initWithCapacity:1];
+    CCSpriteBatchNode *town_asset = [CCSpriteBatchNode batchNodeWithFile:@"town.png"];
+    
+    for (int ii = 0; ii< TOTAL_NUM_TOWNS; ii++) {
+        Town *town = [[Town alloc ] initWithBatchNode:town_asset inLayer:self];
+        [town setLocation:CGPointMake(arc4random() % 1024, arc4random() % 1024)];
+        town.tag = ii;
+        [townsArray addObject:town];
+        [town release];
+    }
+    
 }
 
 -(void) update:(ccTime) dt
@@ -101,6 +114,11 @@
     bg4.position = ccp(bg4.position.x + increment.x * dt * CAMERA_SPEED, bg4.position.y + increment.y * dt * CAMERA_SPEED);
     
     char_location.position = ccp(char_location.position.x + increment.x * dt * CAMERA_SPEED, char_location.position.y + increment.y * dt * CAMERA_SPEED);
+    
+    for (int ii = 0; ii< [townsArray count]; ii++) {
+        CGPoint location = [[townsArray objectAtIndex:ii] getLocation];
+        [[townsArray objectAtIndex:ii] setLocation:CGPointMake(location.x + increment.x * CAMERA_SPEED * dt, location.y + increment.y * CAMERA_SPEED * dt)];
+    }
     
     if (increment.x > 0 && increment.x <= CAMERA_RESET_MIN){
         isCameraResetting = FALSE;
@@ -146,6 +164,11 @@
     bg4.position = ccp(bg4.position.x + (adjusted_map_position.x * MAP_DRAG), bg4.position.y - (adjusted_map_position.y* MAP_DRAG));
     
     char_location.position = ccp(char_location.position.x + (adjusted_map_position.x * MAP_DRAG), char_location.position.y - (adjusted_map_position.y  * MAP_DRAG));
+    
+    for (int ii = 0; ii< [townsArray count]; ii++) {
+        CGPoint location = [[townsArray objectAtIndex:ii] getLocation];
+        [[townsArray objectAtIndex:ii] setLocation:CGPointMake(location.x + (adjusted_map_position.x * MAP_DRAG), location.y - (adjusted_map_position.y* MAP_DRAG))];
+    }
     
     init_touch = new_touch;
 }

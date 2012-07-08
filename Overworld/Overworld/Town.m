@@ -12,14 +12,13 @@
 
 @synthesize tag;
 
--(id) initWithLocation:(CGPoint) location inLayer:(CCLayer *) layer
+-(id) initWithBatchNode:(CCSpriteBatchNode *) sprite inLayer:(CCLayer *) layer
 {
     self = [super init];
     
     if (self != nil) {
         
-        image = [CCSprite spriteWithFile:@"town.png"];
-        image.position = ccp(location.x, location.y);
+        image = [CCSprite spriteWithBatchNode:sprite rect:CGRectMake(0, 0, 16, 16)];
         [layer addChild:image];
     }
     
@@ -27,9 +26,14 @@
 }
 
 //returns town's location
--(CGPoint) location
+-(CGPoint) getLocation
 {
     return image.position;
+}
+
+-(void) setLocation:(CGPoint) location
+{
+    image.position = ccp(location.x, location.y);
 }
 
 @end

@@ -17,7 +17,8 @@
 
 @property int tag;
 
--(id) initWithLocation:(CGPoint) location inLayer:(CCLayer *) layer;
--(void) setTag:(int) val;
+-(id) initWithBatchNode:(CCSpriteBatchNode *) sprite inLayer:(CCLayer *) layer;
+-(CGPoint) getLocation;
+-(void) setLocation:(CGPoint) location;
 
 @end
